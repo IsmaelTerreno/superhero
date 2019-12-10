@@ -15,3 +15,4 @@ This demo app to show the use of APIs with protocol OAuth. In this case is  [Spo
 Just to clarify **there is no great styles here** but is a good example to take when you need to work with other secured APIs.
 
 To give more info this app use Redux + Sagas to make calls and manage the state of the app.
+
