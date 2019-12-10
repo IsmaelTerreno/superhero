@@ -9,7 +9,7 @@ const Playlist = ({playlist, onClickItem}) => {
                playlist.map((item, idx) => {
                  return (
                  <div key={`playlist-item-${idx}`} onClick={() => onClickItem(item)}>
-                     <p>{item.name}</p>
+                     <p className="PlaylistTitle">{item.name}</p>
                      <img src={item.images[1].url} alt={item.name}/>
                  </div>
                  )

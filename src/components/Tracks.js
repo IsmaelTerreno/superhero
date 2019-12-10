@@ -7,13 +7,17 @@ const Tracks = ({tracks}) => {
            {
                tracks &&
                tracks.map((item, idx) => {
-                   const { artists, name, preview_url, external_urls} = item.track;
+                 const { album, artists, name, preview_url, external_urls} = item.track;
+                 const artistNames = artists.map(artist => artist.name).join(', ');
                  return (
                  <div className="TrackItem" key={`playlist-track-item-${idx}`}>
-                     <p>{name}</p>
+                     <p className="TrackItemTitle">{name}</p>
+                     <img className="TrackItemImage" src={album.images[1].url} alt={name}/>
                      <audio controls>
                        <source src={preview_url} type="audio/mpeg"/>
                      </audio>
+                     <p>Artists:</p>
+                     <p> {artistNames}</p>
                      <a className="TrackExternalLink" href={external_urls.spotify} target="_blank">See more in spotify</a>
                  </div>
                  )

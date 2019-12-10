@@ -1,11 +1,18 @@
 .TrackItem {
   margin: 18px;
+  border-bottom: solid 1px white;
+}
+.TrackItemTitle {
+  font-weight: bold;
+}
+.TrackItemImage{
+  margin-bottom: 15px;
 }
 .Tracks{
   padding-left: 10px;
   overflow-y: auto;
   height: 530px;
-  width: 350px;
+  width: 450px;
 }
 
 .TrackExternalLink {
