@@ -1,11 +1,12 @@
 import {
-  GET_PLAYLIST_SUCCESS
+  GET_PLAYLIST_SUCCESS, GET_PLAYLIST_TRACK_SUCCESS
 } from '../actions/playlist';
 import { createSelector } from 'reselect';
 
 const initState = {
   current: null,
   list:[],
+  tracks:[],
 };
 
 export default function(state = initState, action) {
@@ -15,17 +16,22 @@ export default function(state = initState, action) {
           ...state,
         list: action.list
       };
+    case GET_PLAYLIST_TRACK_SUCCESS:
+      return {
+          ...state,
+        tracks: action.list
+      };
     default:
       return state;
   }
 }
 
-const currentPlayListSelector = state => state.playlist.current;
+const tracksSelector = state => state.playlist.tracks;
 const userPlayListSelector = state => state.playlist.list;
 
-export const getCurrentPlaylist = createSelector(
-  currentPlayListSelector,
-    currentPlayList => currentPlayList
+export const getTracks = createSelector(
+    tracksSelector,
+    tracksList => tracksList
 );
 
 export const getUserPlayList = createSelector(

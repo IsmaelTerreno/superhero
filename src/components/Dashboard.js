@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import {MAIN_APP_NAME} from "../config";
 import PropTypes from "prop-types";
 import Playlist from "./Playlist";
+import './Dashboard.scss';
+import Tracks from "./Tracks";
 
 class Dashboard extends Component {
     componentDidMount() {
@@ -12,7 +14,7 @@ class Dashboard extends Component {
     }
 
     render() {
-        const { playlist, isLogin, logout, login } = this.props;
+        const { playlist, isLogin, logout, login, getPlaylistTrack, tracks } = this.props;
         return (
             <div className="App">
                 <header className="App-header">
@@ -21,10 +23,24 @@ class Dashboard extends Component {
                     </h1>
                     { isLogin && <button onClick={logout}>Logout</button>}
                     { !isLogin && <button onClick={login}>Login</button>}
-                </header>
-                {
+                </header> {
                     isLogin &&
-                    <Playlist playlist={playlist}/>
+                    <section className="LayoutPlayList">
+                        <aside>
+                            {
+                                isLogin &&
+                                <Playlist
+                                    playlist={playlist}
+                                    onClickItem={(item) => {
+                                        getPlaylistTrack(item.id);
+                                    }}
+                                />
+                            }
+                        </aside>
+                        <section>
+                            <Tracks tracks={tracks} />
+                        </section>
+                    </section>
                 }
             </div>
         );
@@ -34,9 +50,11 @@ class Dashboard extends Component {
 
 Dashboard.propTypes = {
     findUserPlaylist: PropTypes.func.isRequired,
+    getPlaylistTrack: PropTypes.func.isRequired,
     logout: PropTypes.func.isRequired,
     login: PropTypes.func.isRequired,
     playlist: PropTypes.array,
+    tracks: PropTypes.array,
     isLogin: PropTypes.bool,
 };
 export default Dashboard;

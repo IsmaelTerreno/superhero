@@ -18,6 +18,8 @@ export const AUTH_CONFIG = {
 export const MOCK_ALL_DATA= (process.env.REACT_APP_MOCK_ALL_DATA === 'true');
 export const BASE_END_POINT = process.env.REACT_APP_BASE_END_POINT_CONFIG ;
 export const USER_PLAYLIST_END_POINT = '/me/playlists' ;
+export const PLAYLIST_END_POINT = '/playlists' ;
+export const PLAYLIST_TRACKS_END_POINT = '/tracks' ;
 export const APP_PATH_ROOT = "/";
 export const APP_PATH_LOGIN = "/sign-in";
 export const APP_PATH_AUTH0_CALLBACK = "/callback";
