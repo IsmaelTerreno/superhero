@@ -7,11 +7,13 @@ const Tracks = ({tracks}) => {
            {
                tracks &&
                tracks.map((item, idx) => {
-                   const { artists, name} = item.track;
+                   const { artists, name, preview_url} = item.track;
                  return (
                  <div key={`playlist-track-item-${idx}`}>
                      <p>{name}</p>
-
+                     <audio controls>
+                       <source src={preview_url} type="audio/mpeg"/>
+                     </audio>
                  </div>
                  )
                })
