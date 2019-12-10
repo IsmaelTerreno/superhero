@@ -18,7 +18,7 @@ const Tracks = ({tracks}) => {
                      </audio>
                      <p>Artists:</p>
                      <p> {artistNames}</p>
-                     <a className="TrackExternalLink" href={external_urls.spotify} target="_blank">See more in spotify</a>
+                     <a className="TrackExternalLink" href={external_urls.spotify} target="_blank" rel="noopener noreferrer">See more in spotify</a>
                  </div>
                  )
                })

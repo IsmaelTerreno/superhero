@@ -5191,7 +5191,7 @@ const consumeApi = async (endPoint, method, JWT, mockData, mockOverride, body) =
         handleStatus(response);
         json = await response.json();
       } catch (e) {
-        throw "Invalid session token try to login again.";
+        throw Error("Invalid session token try to login again.");
       }
     }
   }

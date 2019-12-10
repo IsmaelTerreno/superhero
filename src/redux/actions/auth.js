@@ -1,4 +1,4 @@
-import {loginAuth, logOutAuth} from "../../lib/auth";
+import {logOutAuth} from "../../lib/auth";
 
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 export const LOGIN_FAIL = "LOGIN_FAIL";
