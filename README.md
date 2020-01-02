@@ -19,3 +19,6 @@ To give more info this app use Redux + Sagas to make calls and manage the state 
 There is a live demo here: [https://superhero-music.web.app](https://superhero-music.web.app)
 
 You only need a spotify account to see your playlist and related tracks details :).
+
+For more details you can take a look on this particular article about this app:
+https://medium.com/@elismakof2002/reactjs-consuming-apis-with-protocol-oauth-in-spotify-web-api-f0b7f8bb59d2
